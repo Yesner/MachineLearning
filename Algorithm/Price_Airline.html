@@ -3,11 +3,10 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Machine Learning">
-
 <title>Machine Learning with Yesner</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
 
 
@@ -13971,15 +13970,32 @@ a.anchor-link {
     </script>
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class= "container>
+<div class="container">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<center><h1>Price Airline</h1></center>
+<center><h1>Flight Price</h1></center>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><i><h3>Note: I'm still working in this notebook</h3></i></p>
+<center><img src="data:image/jpeg;base64,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"></center><p>I've downloaded the dataset from: <a href="https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction?select=business.csv">https://www.kaggle.com/datasets/shubhambathwal/flight-price-prediction?select=business.csv</a></p>
+<p>The content of the dataset is the following:</p>
+<p>Dataset contains information about flight booking options from the website Easemytrip for flight travel between India's top 6 metro cities. There are 300261 datapoints and 11 features in the cleaned dataset.</p>
+<p><strong>Features:</strong></p>
+<p>The various features of the cleaned dataset are explained below:</p>
+<ul>
+<li>1) Airline: The name of the airline company is stored in the airline column. It is a categorical feature having 6 different airlines.</li>
+<li>2) Flight: Flight stores information regarding the plane's flight code. It is a categorical feature.</li>
+<li>3) Source City: City from which the flight takes off. It is a categorical feature having 6 unique cities.</li>
+<li>4) Departure Time: This is a derived categorical feature obtained created by grouping time periods into bins. It stores information about the departure time and have 6 unique time labels.</li>
+<li>5) Stops: A categorical feature with 3 distinct values that stores the number of stops between the source and destination cities.</li>
+<li>6) Arrival Time: This is a derived categorical feature created by grouping time intervals into bins. It has six distinct time labels and keeps information about the arrival time.</li>
+<li>7) Destination City: City where the flight will land. It is a categorical feature having 6 unique cities.</li>
+<li>8) Class: A categorical feature that contains information on seat class; it has two distinct values: Business and Economy.</li>
+<li>9) Duration: A continuous feature that displays the overall amount of time it takes to travel between cities in hours.</li>
+<li>10)Days Left: This is a derived characteristic that is calculated by subtracting the trip date by the booking date.</li>
+<li>11) Price: Target variable stores information of the ticket price.</li>
+</ul>
 
 </div>
 </div>
@@ -14152,6 +14168,12 @@ a.anchor-link {
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>With the following code, we clean the duplicate data</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14190,6 +14212,12 @@ a.anchor-link {
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>So, now we check info about our dataset</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14243,6 +14271,12 @@ memory usage: 29.8+ MB
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Drop the useless columns</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14257,6 +14291,12 @@ memory usage: 29.8+ MB
 </div>
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In the hist graph, we can see the variability of data about price column.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -15521,6 +15561,12 @@ Name: price, dtype: int64</pre>
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The main objective of this dataset, it's apply a prediction about price of a flight, depending of the airline. Once, We applied our algorithm about regression, we can predict about the price of a flight of a company taking in considering the distintc feature according to dataset.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -15557,6 +15603,12 @@ Name: price, dtype: int64</pre>
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Result:</strong> As result of our model, as example we predict the price of a flight with two samples.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
